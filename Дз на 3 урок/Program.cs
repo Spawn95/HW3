@@ -1,7 +1,7 @@
 ﻿using System;
 using static System.Console;
 
-namespace Task1
+namespace round2
 {
     class Program
     {
@@ -23,12 +23,12 @@ namespace Task1
 
             if (!int.TryParse(W, out var z))
             {
-                Console.WriteLine("Некорректный ввод");
+                Console.WriteLine("Некорректный ввод!");
                 return;
             }
                 if (z <= -5 || z >= 5)
             {
-                Console.WriteLine("Номер указан не верно");
+                Console.WriteLine("Номер указан не верно!");
                 return;
             }
 
