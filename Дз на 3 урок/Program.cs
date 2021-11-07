@@ -1,7 +1,7 @@
 ﻿using System;
 using static System.Console;
 
-namespace Task1
+namespace round2
 {
     class Program
     {
