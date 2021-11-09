@@ -1,49 +1,26 @@
-﻿using System;
-using static System.Console;
+﻿using static System.Console;
 
-namespace Task1
+namespace HW
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var array = new int [5, 5];
-            for (var i = 0; i < 5; i++)
-                for (var j = 0; j < 5; j++)
-                    array[i, j] = i + j;
-            for (var i = 0; i < 5; i++)
+            var contacts = new string[5, 2]
             {
-                for (var j = 0; j < 5; j++)
-                    Console.Write(array[i, j] + " ");
-                Console.WriteLine(" ");
-            }
-
-            Console.WriteLine($"Введите число в интервале от -4 до 4");
-            string W = ReadLine();
-
-            if (!int.TryParse(W, out var z))
+                {"Серега", "       +7 913 123 11 10"},
+                {"Андрей", "       +7 913 664 88 12"},
+                {"Григорий", "     +7 913 331 40 32"},
+                {"Виктор", "       vitek272@mail.ru"},
+                {"Олег Работа", "  olegovoleg1@mai.ru"},
+            };
+            for (var i = 0; i < contacts.GetLength(0); i++)
             {
-                Console.WriteLine("Некорректный ввод");
-                return;
+                for (var j = 0; j < contacts.GetLength(1); j++)
+                    Write(contacts[i, j] + " ");
+                WriteLine();
             }
-                if (z <= -5 || z >= 5)
-            {
-                Console.WriteLine("Номер указан не верно");
-                return;
-            }
-
-            int number = z < 0 ? Math.Abs(z) : z;
-            var T = 5 - Math.Abs(z);
-            for (int i = 0, j = 0; i < T || j < T; i++, j++)
-            {
-                var w = z switch
-                {
-                    0 => array[i, j],
-                    < 0 => array[i, j + number],
-                    _ => array[i + number, j]
-                };
-                Console.Write(w + " ");
-            }
+            ReadLine();
         }
     }
 }
